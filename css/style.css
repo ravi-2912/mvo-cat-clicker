@@ -1,0 +1,17 @@
+
+.cats {
+    height: calc(100vh - 62px);
+}
+
+.card {
+    width: 500px !important;
+}
+
+a.nav-link:hover {
+    background-color: hsl(210, 10%, 30%);
+}
+
+a.nav-link:focus {
+    background-color: hsl(210, 10%, 27%);
+    color: rgba(255,255,255,0.9) !important;
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row text-light bg-primary pl-5 p-2">
+                <h2>Cat Clicker</h2>
+            </div>
+        </div>
+
+        <div class="container-fluid h-100">
+            <div class="row cats">
+
+
+                <nav class="col-2 navbar navbar-expand-lg navbar-dark bg-dark flex-column p-0">
+                    <button type="button" class="btn btn-success btn-block btn-md rounded-0" data-toggle="modal" data-target="#add-new-cat-modal">Add Cat</button>
+                    <div id="navbarNav" class="w-100">
+                        <ul id="cat-lists" class="navbar-nav flex-column light"></ul>
+                    </div>
+                    <div class="form-check mt-auto bg-secondary p-2 w-100 text-center">
+                        <input type="checkbox" class="form-check-input" id="admin-mode">
+                        <label class="form-check-label" for="exampleCheck1">Admin Mode</label>
+                    </div>
+                </nav>
+
+                <div id="cat-display" class="col bg-light">
+                    <div class="card border-secondary m-5">
+                        <img id="show-cat-img" src="https://farm6.staticflickr.com/5598/14934282524_344c84246b.jpg" width="500" height="333" alt="Cat" class="card-img-top">
+                        <div class="card-body">
+                            <h5 id="show-cat-name" class="card-title">{{catName}}</h5>
+                            <p class="card-text">
+                                <b>Clicks: </b> <span id="show-cat-clicks">{{clicks}}</span>
+                            </p>
+                            <!--<button id="edit-cat" type="button" class="btn btn-warning d-none" data-toggle="cat-editor" data-target="#cat-edit-form">Edit</button>-->
+                            <div id="cat-edit-form" class="cat-editor d-none">
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="cat-clicks">Clicks</span>
+                                    </div>
+                                    <input id="edit-cat-clicks" type="text" class="form-control">
+                                </div>
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="cat-name">Name</span>
+                                    </div>
+                                    <input id="edit-cat-name" type="text" class="form-control">
+                                </div>
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="cat-url">URL</span>
+                                    </div>
+                                    <input id="edit-cat-url" type="text" class="form-control">
+                                </div>
+                                <div id="edit-btn-group" class="float-right">
+                                    <button id="cancel-edit-cat" type="button" class="btn btn-secondary">Cancel</button>
+                                    <button id="save-edit-cat" type="button" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="add-new-cat-modal" tabindex="-1" role="dialog" aria-labelledby="add-new-cat-modal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add New Cat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="new-cat-img" src="https://farm6.staticflickr.com/5598/14934282524_344c84246b.jpg" width="500" height="333" alt="Cat" class="img-fluid rounded d-none">
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="cat-url">URL</span>
+                        </div>
+                        <input id="new-cat-url" type="text" class="form-control" placeholder="www.cat-url.com/cute-cat.jpg" aria-label="URL" aria-describedby="new-cat-url">
+                    </div>
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="cat-url-name">Name</span>
+                        </div>
+                        <input id="new-cat-name" type="text" class="form-control" placeholder="Hoppenheimer" aria-label="Cat Name" aria-describedby="new-cat-name">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button id="save-new-cat" type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
