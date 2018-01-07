@@ -7,7 +7,7 @@ The MVO paradigm has been constructed using four objects - `model`, `view`, `vie
 The diagram below shows the above objects and their interactions/bindings with each other.
 
 #### MVVM using [Knockout JS](http://knockoutjs.com/)
-The [branch KO]() of this master demonstrates the same app using Knockout JS, with significant less coding required. Indeed using a framework is efficienct.
+The [branch KO](https://github.com/ravi-2912/mvo-cat-clicker/tree/ko) of this master demonstrates the same app using Knockout JS, with significant less coding required. Indeed using a framework is efficienct.
 
 ***
 ### Dependencies
