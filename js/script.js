@@ -141,11 +141,11 @@ $(function() { // IIFE
             // get all cats
             var cats = octopus.getCats();
             // string to add new element to `ul#cat-lists`
-            var listStr = '<li class="nav-item"><a class="nav-link pl-4 p-2" href="#">{{catName}}</a></li>';
+            var listStr = '<li class="nav-item"><a class="nav-link pl-4 p-2" href="#{{catName}}">{{catName}}</a></li>';
             var appendStr, i, len = cats.length;
             // loops through all cats
             for(i = 0; i < len; i++) {
-                appendStr = listStr.replace("{{catName}}", cats[i].name);
+                appendStr = listStr.replace("{{catName}}", cats[i].name).replace("{{catName}}", cats[i].name);
                 this.catList.append(appendStr);
                 // adding click event to `li` using scoped function
                 $("#cat-lists li:last-child").click(function(cat) {
