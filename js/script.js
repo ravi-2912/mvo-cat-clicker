@@ -158,8 +158,8 @@ $(function() { // IIFE
 
         // modified the above function but implemented for single item when called when adding a new cat
         renderItem: function(cat){
-            var listStr = '<li class="nav-item"><a class="nav-link pl-4 p-2" href="#">{{catName}}</a></li>';
-            var appendStr = listStr.replace("{{catName}}", cat.name);
+            var listStr = '<li class="nav-item"><a class="nav-link pl-4 p-2" href="#{{catName}}">{{catName}}</a></li>';
+            var appendStr = listStr.replace("{{catName}}", cat.name).replace("{{catName}}", cat.name);
             this.catList.append(appendStr);
             $("#cat-lists li:last-child").click(function(cat) {
                 return function() {
