@@ -7,11 +7,12 @@
     width: 500px !important;
 }
 
-a.nav-link:hover {
+li.nav-item:hover {
     background-color: hsl(210, 10%, 30%);
+    cursor: pointer;
 }
 
-a.nav-link:focus {
+a.nav-item:focus {
     background-color: hsl(210, 10%, 27%);
     color: rgba(255,255,255,0.9) !important;
 }
