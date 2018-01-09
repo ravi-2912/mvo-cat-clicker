@@ -41,6 +41,9 @@ var AppViewModel = function () {
     self.catData = ko.observableArray(catsData);
     self.currentCat = ko.observable(new Cat(catsData[0]));
 
+    self.goToCat = function(cat) {
+        self.currentCat(cat);
+    };
 };
 
 // bind the AppViewModel() to Knockout
