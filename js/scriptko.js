@@ -35,9 +35,11 @@ var Cat = function(cat) {
     self.imgSrc = ko.observable(cat.imgSrc);
 };
 
-    for(var i =0, len = cats.length; i < len; i++) {
-
-    }
+// Knockout JS ViewModel
+var AppViewModel = function () {
+    var self = this;
+    self.catData = ko.observableArray(catsData);
+    self.currentCat = ko.observable(new Cat(catsData[0]));
 
 };
 
