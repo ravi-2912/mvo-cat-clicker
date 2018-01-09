@@ -27,9 +27,13 @@ var catsData = [
     }
 ];
 
-// Knockput JS ViewModel
-var AppViewModel = function (data, something) {
+// model
+var Cat = function(cat) {
     var self = this;
+    self.name = ko.observable(cat.name);
+    self.clicks = ko.observable(cat.clickCount);
+    self.imgSrc = ko.observable(cat.imgSrc);
+};
 
     for(var i =0, len = cats.length; i < len; i++) {
 
