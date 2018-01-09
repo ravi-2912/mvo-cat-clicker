@@ -1,5 +1,5 @@
 // cats data
-var cats = [
+var catsData = [
     {
         clickCount : 0,
         name : 'Tabby',
