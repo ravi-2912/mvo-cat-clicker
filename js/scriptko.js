@@ -41,8 +41,8 @@ var AppViewModel = function () {
     self.catData = ko.observableArray([]);
     self.currentCat = ko.observable(self.catData()[0]);
     self.adminMode = ko.observable(false);
-    self.newCatName = ko.observable("");
-    self.newCatImgSrc = ko.observable("");
+    self.newCatName = ko.observable('');
+    self.newCatImgSrc = ko.observable('');
 
     catsData.forEach(function(cat){
         self.catData.push(new Cat(cat));
@@ -57,16 +57,13 @@ var AppViewModel = function () {
     };
 
     self.saveNewCat = function() {
-        var nm = self.newCatName(),
-            is = self.newCatImgSrc();
         self.catData.push(new Cat({
             clickCount : 0,
-            name : nm,
-            imgSrc : is,
+            name : self.newCatName(),
+            imgSrc : self.newCatImgSrc(),
         }));
-        console.log(nm);
-        self.newCatName("");
-        self.newCatImgSrc("");
+        self.newCatName('');
+        self.newCatImgSrc('');
     };
 };
 
