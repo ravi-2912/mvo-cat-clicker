@@ -38,8 +38,12 @@ var Cat = function(cat) {
 // Knockout JS ViewModel
 var AppViewModel = function () {
     var self = this;
-    self.catData = ko.observableArray(catsData);
-    self.currentCat = ko.observable(new Cat(catsData[0]));
+    self.catData = ko.observableArray([]);
+    catsData.forEach(function(cat){
+        self.catData.push(new Cat(cat));
+    });
+
+    self.currentCat = ko.observable(self.catData()[0]);
 
     self.goToCat = function(cat) {
         self.currentCat(cat);
