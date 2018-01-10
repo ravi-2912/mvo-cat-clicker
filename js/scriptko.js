@@ -48,6 +48,11 @@ var AppViewModel = function () {
     self.goToCat = function(cat) {
         self.currentCat(cat);
     };
+
+    self.incrementClicks = function() {
+        self.currentCat().clicks(self.currentCat().clicks() + 1);
+    };
+
 };
 
 // bind the AppViewModel() to Knockout
