@@ -4,10 +4,9 @@ A Cat Clicker app to demonstrate design pattern using Model-View-Octopus :octopu
 
 The MVO paradigm has been constructed using four objects - `model`, `view`, `viewNav` and `octopus` :octopus:. These  objects separate the cats' data (Model) from what the user sees (Views) where the interaction between the two is managed seperately (Octopus :octopus:) which essentially is ViewModel.
 
-The diagram below shows the above objects and their interactions/bindings with each other.
 
 #### MVVM using [Knockout JS](http://knockoutjs.com/)
-The [branch KO](https://github.com/ravi-2912/mvo-cat-clicker/tree/ko) of this master demonstrates the same app using Knockout JS, with significant less coding required. Indeed using a framework is efficienct.
+The [ko branch](https://github.com/ravi-2912/mvo-cat-clicker/tree/ko) of this master demonstrates the same app using Knockout JS, with significant less coding required. Indeed using a framework is efficienct.
 
 ***
 ### Dependencies
