@@ -93,18 +93,18 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="cat-url">URL</span>
                         </div>
-                        <input id="new-cat-url" type="text" class="form-control" placeholder="www.cat-url.com/cute-cat.jpg" aria-label="URL" aria-describedby="new-cat-url">
+                        <input id="new-cat-url" type="text" class="form-control" placeholder="www.cat-url.com/cute-cat.jpg" aria-label="URL" aria-describedby="new-cat-url" data-bind="value: newCatImgSrc">
                     </div>
                     <div class="input-group my-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="cat-url-name">Name</span>
                         </div>
-                        <input id="new-cat-name" type="text" class="form-control" placeholder="Hoppenheimer" aria-label="Cat Name" aria-describedby="new-cat-name">
+                        <input id="new-cat-name" type="text" class="form-control" placeholder="Hoppenheimer" aria-label="Cat Name" aria-describedby="new-cat-name" data-bind="value: newCatName">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button id="save-new-cat" type="button" class="btn btn-primary">Save</button>
+                    <button id="save-new-cat" type="button" class="btn btn-primary" data-dismiss="modal" data-bind="click: saveNewCat">Save</button>
                 </div>
             </div>
             </div>
