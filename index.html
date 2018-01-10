@@ -24,48 +24,48 @@
 
                 <nav class="col-2 navbar navbar-expand-lg navbar-dark bg-dark flex-column p-0">
                     <button type="button" class="btn btn-success btn-block btn-md rounded-0" data-toggle="modal" data-target="#add-new-cat-modal">Add Cat</button>
-                    <div id="navbarNav" class="w-100">
-                        <ul id="cat-lists" class="navbar-nav flex-column light" data-bind="foreach: catData">
+                    <div class="w-100">
+                        <ul class="navbar-nav flex-column light" data-bind="foreach: catData">
                             <li class="nav-item nav-link p-2 pl-4" data-bind="text: $data.name, click: $root.goToCat, css: {selected: $data == $root.currentCat()}"></li>
                         </ul>
                     </div>
                     <div class="form-check mt-auto bg-secondary p-2 w-100 text-center">
-                        <input type="checkbox" class="form-check-input" id="admin-mode" data-bind="checked: adminMode">
+                        <input type="checkbox" class="form-check-input" data-bind="checked: adminMode">
                         <label class="form-check-label" for="exampleCheck1">Admin Mode</label>
                     </div>
                 </nav>
 
-                <div id="cat-display" class="col bg-light" data-bind="with: $root.currentCat">
+                <div class="col bg-light" data-bind="with: $root.currentCat">
                     <div class="card border-secondary m-5">
-                        <img id="show-cat-img" data-bind="attr: {src: imgSrc}, click: $root.incrementClicks" width="500" height="333" alt="Cat" class="card-img-top">
+                        <img data-bind="attr: {src: imgSrc}, click: $root.incrementClicks" width="500" height="333" alt="Cat" class="card-img-top">
                         <div class="card-body">
-                            <h5 id="show-cat-name" class="card-title" data-bind="text: name"></h5>
+                            <h5 class="card-title" data-bind="text: name"></h5>
                             <p class="card-text">
-                                <b>Clicks: </b> <span id="show-cat-clicks" data-bind="text: clicks"></span>
+                                <b>Clicks: </b> <span data-bind="text: clicks"></span>
                             </p>
 
-                            <div id="cat-edit-form" class="cat-editor" data-bind="if: $root.adminMode">
+                            <div class="cat-editor" data-bind="if: $root.adminMode">
                                 <div class="input-group my-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="cat-clicks">Clicks</span>
+                                        <span class="input-group-text">Clicks</span>
                                     </div>
-                                    <input id="edit-cat-clicks" type="text" class="form-control">
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="input-group my-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="cat-name">Name</span>
+                                        <span class="input-group-text">Name</span>
                                     </div>
-                                    <input id="edit-cat-name" type="text" class="form-control">
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="input-group my-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="cat-url">URL</span>
+                                        <span class="input-group-text">URL</span>
                                     </div>
-                                    <input id="edit-cat-url" type="text" class="form-control">
+                                    <input type="text" class="form-control">
                                 </div>
-                                <div id="edit-btn-group" class="float-right">
-                                    <button id="cancel-edit-cat" type="button" class="btn btn-secondary">Cancel</button>
-                                    <button id="save-edit-cat" type="button" class="btn btn-primary">Save</button>
+                                <div class="float-right">
+                                    <button type="button" class="btn btn-secondary">Cancel</button>
+                                    <button type="button" class="btn btn-primary">Save</button>
                                 </div>
                             </div>
 
@@ -82,29 +82,29 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add New Cat</h5>
+                    <h5 class="modal-title">Add New Cat</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img id="new-cat-img" src="https://farm6.staticflickr.com/5598/14934282524_344c84246b.jpg" width="500" height="333" alt="Cat" class="img-fluid rounded d-none">
+                    <img src="https://farm6.staticflickr.com/5598/14934282524_344c84246b.jpg" width="500" height="333" alt="Cat" class="img-fluid rounded d-none">
                     <div class="input-group my-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="cat-url">URL</span>
+                            <span class="input-group-text">URL</span>
                         </div>
-                        <input id="new-cat-url" type="text" class="form-control" placeholder="www.cat-url.com/cute-cat.jpg" aria-label="URL" aria-describedby="new-cat-url" data-bind="value: newCatImgSrc">
+                        <input type="text" class="form-control" placeholder="www.cat-url.com/cute-cat.jpg" aria-label="URL" aria-describedby="new-cat-url" data-bind="value: newCatImgSrc">
                     </div>
                     <div class="input-group my-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="cat-url-name">Name</span>
+                            <span class="input-group-text">Name</span>
                         </div>
-                        <input id="new-cat-name" type="text" class="form-control" placeholder="Hoppenheimer" aria-label="Cat Name" aria-describedby="new-cat-name" data-bind="value: newCatName">
+                        <input type="text" class="form-control" placeholder="Hoppenheimer" aria-label="Cat Name" aria-describedby="new-cat-name" data-bind="value: newCatName">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button id="save-new-cat" type="button" class="btn btn-primary" data-dismiss="modal" data-bind="click: saveNewCat">Save</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-bind="click: saveNewCat">Save</button>
                 </div>
             </div>
             </div>
