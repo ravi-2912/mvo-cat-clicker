@@ -56,6 +56,18 @@ var AppViewModel = function () {
         self.currentCat().clicks(self.currentCat().clicks() + 1);
     };
 
+    self.saveNewCat = function() {
+        var nm = self.newCatName(),
+            is = self.newCatImgSrc();
+        self.catData.push(new Cat({
+            clickCount : 0,
+            name : nm,
+            imgSrc : is,
+        }));
+        console.log(nm);
+        self.newCatName("");
+        self.newCatImgSrc("");
+    };
 };
 
 // bind the AppViewModel() to Knockout
