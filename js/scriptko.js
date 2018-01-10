@@ -41,9 +41,11 @@ var AppViewModel = function () {
     self.catData = ko.observableArray([]);
     self.currentCat = ko.observable(self.catData()[0]);
     self.adminMode = ko.observable(false);
+    self.newCatName = ko.observable("");
+    self.newCatImgSrc = ko.observable("");
 
     catsData.forEach(function(cat){
-            self.catData.push(new Cat(cat));
+        self.catData.push(new Cat(cat));
     });
 
     self.goToCat = function(cat) {
