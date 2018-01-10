@@ -29,7 +29,7 @@
                             <li class="nav-item nav-link p-2 pl-4" data-bind="text: $data.name, click: $root.goToCat, css: {selected: $data == $root.currentCat()}"></li>
                         </ul>
                     </div>
-                    <div class="form-check mt-auto bg-secondary p-2 w-100 text-center">
+                    <div class="form-check mt-auto p-2 w-100 text-center" data-bind="css: adminMode() ? 'bg-warning' : 'bg-secondary'">
                         <input type="checkbox" class="form-check-input" data-bind="checked: adminMode">
                         <label class="form-check-label" for="exampleCheck1">Admin Mode</label>
                     </div>
